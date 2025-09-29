@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manzel/core/constant/screen_size.dart';
+import 'package:manzel/core/network/remote/apis_const.dart';
 
 class FullScreenViewer extends StatefulWidget {
   final List<String> images;
@@ -25,7 +26,6 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
     currentIndex = widget.initialIndex;
     _controller = PageController(initialPage: widget.initialIndex);
 
-    // متابعة التمرير لتحديث currentIndex
     _controller.addListener(() {
       final page = _controller.page?.round();
       if (page != null && page != currentIndex) {
@@ -58,8 +58,8 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
                     panEnabled: true,
                     minScale: 1.0,
                     maxScale: 4.0,
-                    child: Image.asset(
-                      widget.images[index],
+                    child: Image.network(
+                      ApiConstance.urlImage(widget.images[index]),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -67,7 +67,6 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
               },
             ),
 
-            // زر الإغلاق
             Positioned(
               top: 10,
               left: 10,
@@ -80,7 +79,6 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
               ),
             ),
 
-            // ✅ القائمة الجانبية للصور المصغرة مع التحديد والضغط للتغيير
             Positioned(
               bottom: 16,
               child: SizedBox(
@@ -110,8 +108,8 @@ class _FullScreenViewerState extends State<FullScreenViewer> {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(6),
-                            child: Image.asset(
-                              widget.images[index],
+                            child: Image.network(
+                              ApiConstance.urlImage(widget.images[index]),
                               width: 60,
                               height: 60,
                               fit: BoxFit.cover,

@@ -69,7 +69,7 @@ class SeeMoreProperty extends StatelessWidget {
                         child: GridView.count(
                           shrinkWrap: true,
                           crossAxisCount: 2,
-                          childAspectRatio: 0.6,
+                          childAspectRatio: 0.55,
                           crossAxisSpacing: 7,
                           mainAxisSpacing: 7,
                           children: List.generate(property.length, (index) {

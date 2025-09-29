@@ -15,6 +15,8 @@ import 'core/component/notefcation.dart';
 import 'core/constant/app_localizations.dart';
 import 'core/network/local/cachHelper.dart';
 import 'core/style/theme.dart';
+import 'package:flutter/services.dart';
+
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
 FlutterLocalNotificationsPlugin();
@@ -48,6 +50,8 @@ void _showNotification(RemoteMessage message) async {
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
   DioHelper.init();
   await CacheHelper.init();
   await Firebase.initializeApp();

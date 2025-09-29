@@ -37,7 +37,7 @@ class OfficeItem extends StatelessWidget {
               ):
               CircleAvatar(
                 radius: 23,
-                backgroundImage: NetworkImage('${ApiConstance.basUrlImage}${followedOffices.image}'),
+                backgroundImage: NetworkImage('${ApiConstance.urlImage(followedOffices.image)}'),
               ),
               SizedBox(width: screenWidth(context)*0.01,),
               Text("${followedOffices.OfficeName}",style: Theme.of(context).textTheme.bodySmall,)

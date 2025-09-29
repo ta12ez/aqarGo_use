@@ -1,7 +1,7 @@
 
 class ApiConstance{
-  static const String basUrl="https://2dd4f9808c9d.ngrok-free.app/api/";
-  static const String basUrlImage="https://2dd4f9808c9d.ngrok-free.app/storage/";
+  static const String basUrl="https://fee09cb4fcf2.ngrok-free.app/api/";
+  static const String basUrlImage="https://fee09cb4fcf2.ngrok-free.app/storage/";
   static String urlImage(String? path)=>"${basUrlImage}$path";
   static const String login="${basUrl}User/login";
   static const String register="${basUrl}User/register";

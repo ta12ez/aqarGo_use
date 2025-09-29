@@ -37,6 +37,7 @@ class AddPropertyCubit extends Cubit<AddPropertyState> {
 
   final ImagePicker picker = ImagePicker();
   Future<void> pickImage(int tappedIndex) async {
+    print(HeaderConstance.token);
     if (!images.contains(null)) return;
 
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
